@@ -18,6 +18,18 @@ https://leetcode.com/problemset/
 -->
 
 
+2. Palindrome number
+
+Given an integer x, return true if x is a palindrome, and false otherwise.
+
+``` python
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        return x == int(str(x)[::-1])
+```
+<br>
 
 
 1. Two sum
