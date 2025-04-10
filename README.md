@@ -18,6 +18,26 @@ https://leetcode.com/problemset/
 -->
 
 
+4. Longest common prefix
+
+Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+
+``` python
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+
+        first = strs[0]
+        length = len(first)
+
+        while length != 0:
+            if all(first[:length] == word[:length] for word in strs[1:]):
+                return first[:length]
+            length -= 1
+        return ""
+```
+<br>
+
+
 3. Roman to integer
 
 Given a roman numeral up to 3999, convert it to an integer.
