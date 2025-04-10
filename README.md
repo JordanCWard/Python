@@ -18,6 +18,40 @@ https://leetcode.com/problemset/
 -->
 
 
+5. Valid parentheses
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. <br>
+
+An input string is valid if: <br>
+
+Open brackets must be closed by the same type of brackets. <br>
+Open brackets must be closed in the correct order. <br>
+Every close bracket has a corresponding open bracket of the same type. <br>
+
+``` python
+class Solution:
+    def isValid(self, s: str) -> bool:
+
+        stack = []
+        pairs = {')': '(', ']': '[', '}': '{'}
+
+        for char in s:
+            if char == '(' or char == '{' or char == '[':
+                stack.append(char)
+            elif not stack:
+                return False
+            elif stack[-1] == pairs[char]:
+                stack.pop()
+            else:
+                return False
+        if not stack:
+            return True
+        else:
+            return False
+```
+<br>
+
+
 4. Longest common prefix
 
 Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
